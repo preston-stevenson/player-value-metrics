@@ -1,0 +1,19 @@
+# Data (intentionally excluded from this repo -- see README's Data section)
+data/
+*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Rproj.user/
+
+# macOS
+.DS_Store
+
+# Misc scratch
+_to_delete/
+.claude_scratch*/
