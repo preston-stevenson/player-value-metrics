@@ -2,9 +2,8 @@
 
 Code behind a set of NBA player-value models built for a Substack piece comparing
 how different ways of measuring "how good is this player" can disagree, sometimes
-sharply, about the same guy. Four approaches, increasing in how much they lean on
-play-by-play data versus box-score data, plus an R script for pulling clean
-leaderboard tables around a specific player out of the results.
+sharply, about the same guy. Five approaches, increasing in how much they lean on
+play-by-play data versus box-score data.
 
 ## The approaches
 
@@ -41,13 +40,6 @@ leaderboard tables around a specific player out of the results.
 The three notebooks that pull the raw inputs (game logs, listed positions, and
 in-season traded-player stint boundaries) the metrics notebooks above build from.
 
-## `r/`
-
-`jaylen_brown_rank_windows.R` builds a small `gt` leaderboard table for each of
-the five outputs above (single-year RAPM, box-score-only, decayed RAPM,
-prior-informed RAPM, recency-weighted RAPM), each one windowed to the 9 rows
-surrounding a given player so you can see exactly who's sitting around them at
-that rank, and saves each as a PNG.
 
 ## Data
 
@@ -60,15 +52,4 @@ pipeline. If you want to run these yourself, you'll need to point `DATA_DIR`,
 `POSS_DIR`, and `PS_PATH` (near the top of each metrics notebook) at your own
 copies of that data.
 
-## Requirements
 
-- Python: `pandas`, `numpy`, `scikit-learn` (RidgeCV is used throughout), plus
-  whatever you use to pull NBA data (e.g. `nba_api`) for the `data_collection/`
-  notebooks.
-- R (for `r/jaylen_brown_rank_windows.R`): `tidyverse`, `gt`, `magick` (which
-  wraps ImageMagick, install that separately if you don't already have it,
-  e.g. `brew install imagemagick` on macOS).
-
-## License
-
-MIT, see `LICENSE`.
